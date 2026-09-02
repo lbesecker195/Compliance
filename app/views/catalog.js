@@ -49,6 +49,7 @@ module.exports = function catalogView(briefsMap) {
 
   return layout({
     title: 'ACLA Account Brief — Catalog',
+    baseUrl: process.env.BASE_URL || '',
     body: `
 <header class="site-header">
   <div class="brand">ACLA Account Brief</div>

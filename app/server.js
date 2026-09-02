@@ -11,6 +11,9 @@ const SESSION_SECRET = process.env.SESSION_SECRET || 'acla-dev-session-secret-ch
 
 const app = express();
 
+// Define base URL prefix (e.g., '/Compliance' in production, '' locally)
+const BASE_URL = process.env.BASE_URL || '';
+
 app.disable('x-powered-by');
 app.use(cookieParser());
 app.use(
@@ -30,6 +33,9 @@ app.use(express.urlencoded({ extended: false }));
 
 // Static CSS delivery
 app.use('/public', express.static(path.join(__dirname, 'public')));
+
+// Make baseUrl accessible in all requests/views
+app.locals.baseUrl = BASE_URL;
 
 // Catalog Route
 app.get('/', controller.getCatalog);
