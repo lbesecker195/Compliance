@@ -7,7 +7,7 @@ module.exports = function layout({ title, body, chrome }) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${title}</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="./public/styles.css">
 </head>
 <body class="${chrome ? 'reader-body' : ''}">
 ${body}
