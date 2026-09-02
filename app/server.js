@@ -29,7 +29,7 @@ app.use(
 app.use(express.urlencoded({ extended: false }));
 
 // Static CSS delivery
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Catalog Route
 app.get('/', controller.getCatalog);
