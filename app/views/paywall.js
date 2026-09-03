@@ -3,6 +3,21 @@
 const layout = require('./layout');
 
 module.exports = function paywallView(item, paypalUrl, successReturnUrl) {
+  const isLive = process.env.PAYPAL_MODE === 'live';
+
+  const devBypassHtml = isLive
+    ? `<!--
+  <p class="stub-note">
+    <strong>Dev Test Bypass:</strong> Simulate PayPal completion directly without logging in to PayPal:<br>
+    <a href="${successReturnUrl}">[Simulate PayPal Success Redirect]</a>
+  </p>
+  -->`
+    : `
+  <p class="stub-note">
+    <strong>Dev Test Bypass:</strong> Simulate PayPal completion directly without logging in to PayPal:<br>
+    <a href="${successReturnUrl}">[Simulate PayPal Success Redirect]</a>
+  </p>`;
+
   return layout({
     title: `Checkout — ${item.title} (${item.editionLabel}) · ACLA Account Brief`,
     baseUrl: process.env.BASE_URL || '',
@@ -23,18 +38,15 @@ module.exports = function paywallView(item, paypalUrl, successReturnUrl) {
     </a>
   </div>
 
-  <p class="stub-note">
-    <strong>Dev Test Bypass:</strong> Simulate PayPal completion directly without logging in to PayPal:<br>
-    <a href="${successReturnUrl}">[Simulate PayPal Success Redirect]</a>
-  </p>
+  ${devBypassHtml}
 
   <p style="margin-top:1.4rem;font-size:0.9rem;color:var(--muted)">
-    <a href="/">Back to catalog</a>
+    <a href="${process.env.BASE_URL || ''}/">Back to catalog</a>
   </p>
 </main>
 <footer class="site-footer">
   <span>ACLA · Healthcare / HIPAA · September 2026</span>
-  <a href="/logout">Clear session</a>
+  <a href="${process.env.BASE_URL || ''}/logout">Clear session</a>
 </footer>`,
   });
 };
