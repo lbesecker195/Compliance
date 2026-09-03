@@ -22,7 +22,7 @@ module.exports = function catalogView(briefsMap) {
         <span class="badge">Preview Edition</span>
         <div class="price">${brief.preview.price}</div>
         <p>${brief.preview.description}</p>
-        <a class="btn" href="/brief/${brief.preview.sku}">Open Preview</a>
+        <a class="btn" href="brief/${brief.preview.sku}">Open Preview</a>
       </div>` : '';
 
     const fullCard = brief.full ? `
@@ -30,7 +30,7 @@ module.exports = function catalogView(briefsMap) {
         <span class="badge">Full Edition</span>
         <div class="price">${brief.full.price}</div>
         <p>${brief.full.description}</p>
-        <a class="btn" href="/brief/${brief.full.sku}">Open Full</a>
+        <a class="btn" href="brief/${brief.full.sku}">Open Full</a>
       </div>` : '';
 
     return `
