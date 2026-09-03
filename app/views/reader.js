@@ -5,6 +5,7 @@ const layout = require('./layout');
 module.exports = function readerView(item) {
   return layout({
     title: `${item.title} (${item.editionLabel}) · ACLA Account Brief`,
+    baseUrl: process.env.BASE_URL || '',
     chrome: true,
     body: `
 <div class="reader">

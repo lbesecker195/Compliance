@@ -5,6 +5,7 @@ const layout = require('./layout');
 module.exports = function paywallView(item, paypalUrl, successReturnUrl) {
   return layout({
     title: `Checkout — ${item.title} (${item.editionLabel}) · ACLA Account Brief`,
+    baseUrl: process.env.BASE_URL || '',
     body: `
 <header class="site-header">
   <div class="brand">ACLA Account Brief</div>
