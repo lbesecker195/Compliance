@@ -76,9 +76,9 @@ class BriefModel {
           filepath: path.join(BRIEFS_DIR, filename),
           filename: `${sku}.pdf`,
           title: displayTitle,
-          editionLabel: isPreview ? 'Wimpy' : 'Full',
-          price: isPreview ? '$50' : '$10,000',
-          amount: isPreview ? '50.00' : '10000.00',
+          editionLabel: isPreview ? 'Preview' : 'Full',
+          price: isPreview ? '$50' : '$1,500',
+          amount: isPreview ? '50.00' : '1500.00',
           description: isPreview
             ? 'Condensed account brief positioning and surface area.'
             : 'Complete brief with full coverage, unredacted narrative, and recommended motions.',

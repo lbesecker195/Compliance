@@ -10,6 +10,15 @@ function slugify(text) {
     .replace(/[^\w\-]+/g, '');
 }
 
+function formatPrice(price) {
+  if (!price) return '';
+  const priceStr = String(price);
+  if (priceStr.includes('1500') || priceStr.includes('1,500')) {
+    return `<span style="text-decoration: line-through; opacity: 0.7; font-size: 0.85em; margin-right: 6px;">$10,000</span>${priceStr}`;
+  }
+  return priceStr;
+}
+
 module.exports = function catalogView(briefsMap) {
   const stubs = Object.keys(briefsMap);
 
@@ -19,16 +28,16 @@ module.exports = function catalogView(briefsMap) {
 
     const previewCard = brief.preview ? `
       <div class="card">
-        <span class="badge">Wimpy Edition</span>
-        <div class="price">${brief.preview.price}</div>
+        <span class="badge">Preview Edition</span>
+        <div class="price">${formatPrice(brief.preview.price)}</div>
         <p>${brief.preview.description}</p>
-        <a class="btn" href="brief/${brief.preview.sku}">Open Wimpy Edition</a>
+        <a class="btn" href="brief/${brief.preview.sku}">Open Preview Edition</a>
       </div>` : '';
 
     const fullCard = brief.full ? `
       <div class="card">
         <span class="badge">Full Report</span>
-        <div class="price">${brief.full.price}</div>
+        <div class="price">${formatPrice(brief.full.price)}</div>
         <p>${brief.full.description}</p>
         <a class="btn" href="brief/${brief.full.sku}">Open Full Report</a>
       </div>` : '';
@@ -56,6 +65,9 @@ module.exports = function catalogView(briefsMap) {
   <div class="brand-sub">Incident Response & Intelligence</div>
 </header>
 <main class="wrap">
+  <div class="banner discount-banner" style="background:#fff3cd; color:#856404; border:1px solid #ffeeba; padding:12px; margin-bottom:20px; border-radius:4px; text-align:center;">
+    <strong>Limited Time Offer: <span style="text-decoration: line-through; opacity: 0.7; margin-right: 4px;">$10,000</span> $1,500</strong> — Discount expires in <span id="discount-timer" style="font-weight:bold; color:#d9534f;">10:00:00</span>
+  </div>
   <div class="hero">
     <div class="kicker">Security Operations</div>
     <h1>Incident Report Briefs</h1>
@@ -70,6 +82,40 @@ module.exports = function catalogView(briefsMap) {
   <a href="/logout">Clear session</a>
 </footer>
 <script>
+  (function initDiscountTimer() {
+    const TEN_HOURS_MS = 10 * 60 * 60 * 1000;
+    let endTime = localStorage.getItem('catalog_offer_end');
+
+    if (!endTime || Date.now() > parseInt(endTime, 10)) {
+      endTime = Date.now() + TEN_HOURS_MS;
+      localStorage.setItem('catalog_offer_end', endTime);
+    } else {
+      endTime = parseInt(endTime, 10);
+    }
+
+    function updateDisplay() {
+      const remaining = Math.max(0, endTime - Date.now());
+      const hours = Math.floor(remaining / (1000 * 60 * 60));
+      const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+      const formatted = [hours, minutes, seconds]
+        .map(v => String(v).padStart(2, '0'))
+        .join(':');
+
+      const el = document.getElementById('discount-timer');
+      if (el) el.textContent = formatted;
+
+      if (remaining <= 0) {
+        endTime = Date.now() + TEN_HOURS_MS;
+        localStorage.setItem('catalog_offer_end', endTime);
+      }
+    }
+
+    updateDisplay();
+    setInterval(updateDisplay, 1000);
+  })();
+
   (function autoExpandHashAccordion() {
     function handleHash() {
       const hash = window.location.hash;
