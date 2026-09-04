@@ -6,6 +6,7 @@
 | :--- | :--- |
 | **Classification** | CONFIDENTIAL — Buyer Use Only (Defense Counsel / Crisis PR / Cyber IR–MSSP) |
 | **Brief date** | 2026-09-03 Pacific Time (PT) |
+| **Edition** | WIMPY_EDITION | 
 | **Prepared for** | Law firms (defense & specialty privacy), crisis communications agencies, cyber incident-response / MSSP practices |
 | **Product type** | One-and-done executive intelligence brief — no refresh window, no monitoring subscription, no update SLA |
 | **Composite triage score** | **85/100** (prior lead triage: high commercial urgency on public-disclosure day; multi-jurisdiction sealed-data vendor SaaS event) |

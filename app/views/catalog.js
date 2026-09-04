@@ -22,7 +22,7 @@ module.exports = function catalogView(briefsMap) {
         <span class="badge">Wimpy Edition</span>
         <div class="price">${brief.preview.price}</div>
         <p>${brief.preview.description}</p>
-        <a class="btn" href="brief/${brief.preview.sku}">Open Preview</a>
+        <a class="btn" href="brief/${brief.preview.sku}">Open Wimpy Edition</a>
       </div>` : '';
 
     const fullCard = brief.full ? `

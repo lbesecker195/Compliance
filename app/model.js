@@ -76,7 +76,7 @@ class BriefModel {
           filepath: path.join(BRIEFS_DIR, filename),
           filename: `${sku}.pdf`,
           title: displayTitle,
-          editionLabel: isPreview ? 'Preview' : 'Full',
+          editionLabel: isPreview ? 'Wimpy' : 'Full',
           price: isPreview ? '$50' : '$10,000',
           amount: isPreview ? '50.00' : '10000.00',
           description: isPreview
@@ -123,10 +123,19 @@ class BriefModel {
       throw new Error(`Markdown file not found for SKU: ${skuKey}`);
     }
 
-    const markdownContent = fs.readFileSync(item.filepath, 'utf8');
-    const rawHtmlContent = await marked.parse(markdownContent);
-
     const isPreview = item.edition === 'preview';
+
+    let markdownContent = fs.readFileSync(item.filepath, 'utf8');
+
+    const editionLabel = isPreview ? 'WIMPY_EDITION' : 'Full Edition';
+
+    markdownContent = markdownContent
+      .replace(/WIMPY_EDITION/g, editionLabel)
+      .replace(/FULL_EDITION/g, editionLabel)
+      .replace(/\{\{\s*EDITION\s*\}\}/g, editionLabel)
+      .replace(/\[EDITION\]/gi, editionLabel);
+
+    const rawHtmlContent = await marked.parse(markdownContent);
 
     const redactionStyles = isPreview
       ? `
