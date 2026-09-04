@@ -19,7 +19,7 @@ module.exports = function catalogView(briefsMap) {
 
     const previewCard = brief.preview ? `
       <div class="card">
-        <span class="badge">Preview Edition</span>
+        <span class="badge">Wimpy Edition</span>
         <div class="price">${brief.preview.price}</div>
         <p>${brief.preview.description}</p>
         <a class="btn" href="brief/${brief.preview.sku}">Open Preview</a>
