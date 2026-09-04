@@ -77,8 +77,8 @@ class BriefModel {
           filename: `${sku}.pdf`,
           title: displayTitle,
           editionLabel: isPreview ? 'Preview' : 'Full',
-          price: isPreview ? '$50' : '$1500',
-          amount: isPreview ? '50.00' : '1500.00',
+          price: isPreview ? '$50' : '$10,000',
+          amount: isPreview ? '50.00' : '10000.00',
           description: isPreview
             ? 'Condensed account brief positioning and surface area.'
             : 'Complete brief with full coverage, unredacted narrative, and recommended motions.',
