@@ -27,10 +27,10 @@ module.exports = function catalogView(briefsMap) {
 
     const fullCard = brief.full ? `
       <div class="card">
-        <span class="badge">Full Edition</span>
+        <span class="badge">Full Report</span>
         <div class="price">${brief.full.price}</div>
         <p>${brief.full.description}</p>
-        <a class="btn" href="brief/${brief.full.sku}">Open Full</a>
+        <a class="btn" href="brief/${brief.full.sku}">Open Full Report</a>
       </div>` : '';
 
     return `
@@ -48,25 +48,25 @@ module.exports = function catalogView(briefsMap) {
   }).join('');
 
   return layout({
-    title: 'ACLA Account Brief — Catalog',
+    title: 'Incident Report Briefs — Catalog',
     baseUrl: process.env.BASE_URL || '',
     body: `
 <header class="site-header">
-  <div class="brand">ACLA Account Brief</div>
-  <div class="brand-sub">Healthcare / HIPAA · September 2026</div>
+  <div class="brand">Incident Report Briefs</div>
+  <div class="brand-sub">Incident Response & Intelligence</div>
 </header>
 <main class="wrap">
   <div class="hero">
-    <div class="kicker">Prepared for Nashville MSPs</div>
-    <h1>ACLA Account Briefs</h1>
-    <p>Available healthcare / HIPAA account briefs detected in <code>/briefs</code>.</p>
+    <div class="kicker">Security Operations</div>
+    <h1>Incident Report Briefs</h1>
+    <p>Available incident report briefs detected in <code>/briefs</code>.</p>
   </div>
   <div class="accordion-list">
-    ${accordionHtml || '<p>No briefs found in <code>/briefs</code> directory.</p>'}
+    ${accordionHtml || '<p>No incident report briefs found in <code>/briefs</code> directory.</p>'}
   </div>
 </main>
 <footer class="site-footer">
-  <span>ACLA · Healthcare / HIPAA · September 2026 · Nashville MSPs</span>
+  <span>Incident Response & Security Operations</span>
   <a href="/logout">Clear session</a>
 </footer>
 <script>
