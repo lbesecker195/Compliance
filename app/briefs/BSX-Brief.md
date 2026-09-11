@@ -13,7 +13,7 @@
 
 ---
 
-# Page 1: Executive Summary & Critical Incident Overview
+
 
 ## Company profile `[confirmed]`
 <span class="redacted">Boston Scientific Corporation is a global medical-device manufacturer headquartered at **300 Boston Scientific Way, Marlborough, Massachusetts 01752-1234**. Public company facts used in this brief:</span>
@@ -56,7 +56,7 @@
 
 ---
 
-# Page 2: Threat Actor Profile & Attack Vector
+
 
 ## What is known `[confirmed]`
 - <span class="redacted">Unauthorized activity on certain Boston Scientific information technology systems.</span>
@@ -83,7 +83,7 @@
 
 ---
 
-# Page 3: Compromised Data & Asset Footprint
+
 
 ## What filings actually say about data `[confirmed]`
 <span class="redacted">Boston Scientific’s Item 1.05 and Sep 9 IR update focus on **systems access outage**, **operational restoration**, and **absence of ongoing threat activity / product-technology compromise**. They do **not** state that customer, patient, employee, or trade-secret data were accessed, copied, or stolen.</span>
@@ -117,7 +117,7 @@
 
 ---
 
-# Page 4: Minute-by-Minute Chronology
+
 
 ```mermaid
 <span class="redacted">timeline</span>
@@ -150,7 +150,7 @@
 
 ---
 
-# Page 5: SEC Regulatory & Materiality Analysis
+
 
 ## Disclosure path `[confirmed]`
 1. <span class="redacted">**Aug 26, 2026 — Form 8-K:** Initial disclosure of the Aug 25 cybersecurity incident and global operational disruption.</span>
@@ -177,7 +177,7 @@
 
 ---
 
-# Page 6: Multi-Jurisdictional Compliance Deadlines
+
 
 ## Federal — medical device & securities `[confirmed` anchors · `inferred` clocks`]`
 
@@ -206,7 +206,7 @@
 
 ---
 
-# Page 7: Class-Action & Shareholder Litigation Risk
+
 
 ## Active / disclosed litigation `[claimed/negative search as of prep date]`
 <span class="redacted">No putative consumer class action or securities class action caption tied to this incident was identified in the primary company filings, StockTitan 8-K text, or major-desk summaries reviewed for this brief. **Absence of a docket hit in this pass is not proof none will be filed.** `[claimed/negative search]`</span>
@@ -230,7 +230,7 @@
 
 ---
 
-# Page 8: B2B Supply Chain & Third-Party Blast Radius
+
 
 ## Internal ecosystem `[confirmed` structure · `inferred` exposure`]`
 - <span class="redacted">**Cardiovascular** and **MedSurg** groups (Fitzgerald / Butcher) serve hospitals and ASCs globally — procedure kits, implants, single-use devices sensitive to stocking outages.</span>
@@ -255,7 +255,7 @@
 
 ---
 
-# Page 9: Containment & Technical Remediation Review
+
 
 ## Company-stated actions `[confirmed]`
 - <span class="redacted">Incident response protocols activated Aug 25</span>
@@ -291,7 +291,7 @@
 
 ---
 
-# Page 10: Executive & Board Governance Checklist
+
 
 ### For General Counsel — Vance R. Brown (EVP, GC & Corporate Secretary) `[confirmed` title`]`
 - [ ] <span class="redacted">Privilege-protected chronology: detect (Aug 25) → contain → Aug 26 8-K → materiality determination (Sep 7) → Item 1.05 → Sep 9 restore update</span>
@@ -329,7 +329,7 @@
 
 ---
 
-# Page 11: Service Provider Pitch Playbook ($1,500 SKU)
+
 
 ## Product rules (commercial law of this brief)
 - <span class="redacted">**Primary SKU:** $1,500 one-time Executive Intelligence Brief — same-day / 24h turnaround, **no retainer**.</span>
@@ -365,7 +365,7 @@
 
 ---
 
-# Page 12: Target Executive Contact Directory (Internal Boston Scientific)
+
 
 <span class="redacted">Public leadership and IR/comms contacts relevant to engagement / diligence. **No personal emails invented.** Use only company-published channels below. HQ: 300 Boston Scientific Way, Marlborough, MA 01752-1234 · Main (508) 683-4000. `[confirmed]`</span>
 
